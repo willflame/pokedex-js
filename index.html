@@ -25,8 +25,35 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="/assets/css/global.css" />
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/pokedex.css" />
   </head>
   <body>
+    <section class="content">
+      <h1>Pokedex</h1>
+
+      <ol class="pokemon-list">
+        <li class="pokemon-card">
+          <span class="pokemon-card__number">#001</span>
+          <span class="pokemon-card__name">Bulbasaur</span>
+
+          <div class="poemon-card__detail">
+            <ol class="pokemon-card__type-list">
+                <li class="pokemon-card__type">grass</li>
+                <li class="pokemon-card__type">poison</li>
+            </ol>
+
+            <img
+              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493-bug.png"
+              alt="pokemon name"
+              class="pokemon-card__img"
+            />
+          </div>
+        </li>
+      </ol>
+    </section>
+
     <!-- JS -->
     <script src="/assets/js/main.js" defer></script>
   </body>
