@@ -1,5 +1,7 @@
 # Pokedex JS
 
+# API
+PokeApi - https://pokeapi.co/
 
 # Tecnologias utilizadas no desenvolvimento do projeto
 - NodeJS - https://nodejs.org/en
@@ -19,3 +21,4 @@
 - Normalize CSS - https://cdnjs.com/libraries/normalize
     Version: 8.0.1
 - Google fonts - https://fonts.google.com/
+- Fetch API - https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API
