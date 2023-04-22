@@ -1,22 +1,22 @@
-const offset = 0;
-const limit = 10;
-const baseUrl = "https://pokeapi.co/api/v2";
-const url = `${baseUrl}/pokemon?offset=${offset}&limit=${limit}`;
+function convertPokemonTypesToLi(types) {
+  return types.map(
+    (type) => `<li class="pokemon-card__type ${type}">${type}</li>`
+  );
+}
 
 function convertPokemonToHtmlLi(pokemon) {
   return `
-    <li class="pokemon-card">
-        <span class="pokemon-card__number">#001</span>
+    <li class="pokemon-card ${pokemon.type}">
+        <span class="pokemon-card__number">#${pokemon.number}</span>
         <span class="pokemon-card__name">${pokemon.name}</span>
 
         <div class="poemon-card__detail">
             <ol class="pokemon-card__type-list">
-                <li class="pokemon-card__type">grass</li>
-                <li class="pokemon-card__type">poison</li>
+                ${convertPokemonTypesToLi(pokemon.types).join("")}
             </ol>
 
             <img
-              src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/493-bug.png"
+              src="${pokemon.photo}"
               alt="${pokemon.name}"
               class="pokemon-card__img"
             />
@@ -25,16 +25,11 @@ function convertPokemonToHtmlLi(pokemon) {
     `;
 }
 
-fetch(url)
-  .then((response) => response.json())
-  .then((jsonBody) => jsonBody.results)
-  .then((pokemonList) => {
-    const pokemonsListElement = document.getElementById("pokemon-list");
+pokeApi
+  .getPokemons()
+  .then((pokemons = []) => {
+    const pokemonList = document.getElementById("pokemon-list");
 
-    if (pokemonList.length > 0) {
-      pokemonList.map((pokemon) => {
-        pokemonsListElement.innerHTML += convertPokemonToHtmlLi(pokemon);
-      });
-    }
+    pokemonList.innerHTML += pokemons.map(convertPokemonToHtmlLi).join("");
   })
   .catch((error) => console.log({ error }));

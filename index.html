@@ -25,9 +25,10 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="/assets/css/global.css" />
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/pokedex.css" />
+    <link rel="stylesheet" href="/assets/css/pokemon-types.css" />
   </head>
   <body>
     <section class="content">
@@ -52,9 +53,18 @@
           </div>
         </li> -->
       </ol>
+
+      <div class="pagination">
+        <button id="loadMoreButton" class="button" type="button">
+          Load more
+        </button>
+      </div>
+      
     </section>
 
     <!-- JS -->
+    <script src="/assets/js/pokemon-model.js" defer></script>
+    <script src="/assets/js/poke-api.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
   </body>
 </html>
