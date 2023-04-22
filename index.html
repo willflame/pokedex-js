@@ -25,16 +25,17 @@
 
     <!-- Global CSS -->
     <link rel="stylesheet" href="/assets/css/global.css" />
-    
+
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/pokedex.css" />
+    <link rel="stylesheet" href="/assets/css/pokemon-types.css" />
   </head>
   <body>
     <section class="content">
-      <h1>Pokedex</h1>
+      <h1>Pokédex</h1>
 
-      <ol class="pokemon-list">
-        <li class="pokemon-card">
+      <ol id="pokemon-list" class="pokemon-list">
+        <!-- <li class="pokemon-card">
           <span class="pokemon-card__number">#001</span>
           <span class="pokemon-card__name">Bulbasaur</span>
 
@@ -50,11 +51,20 @@
               class="pokemon-card__img"
             />
           </div>
-        </li>
+        </li> -->
       </ol>
+
+      <div class="pagination">
+        <button id="loadMoreButton" class="button" type="button">
+          Load more
+        </button>
+      </div>
+      
     </section>
 
     <!-- JS -->
+    <script src="/assets/js/pokemon-model.js" defer></script>
+    <script src="/assets/js/poke-api.js" defer></script>
     <script src="/assets/js/main.js" defer></script>
   </body>
 </html>
